@@ -1,0 +1,21 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+<p><%=homeContent%></p>
+
+
+<!--print title one by one and post is a new var here  -->
+<% posts.forEach(function(post) { %>
+
+<h1> <%=post.title%> </h1>
+                        <!-- from zero to 100 letters then three dots will show  -->
+<p> <%= post.content.substring(0,100)+" ..."%>
+<a href="/posts/<%=post._id%>" >Read More</a>
+</p>
+<% }); %>
+
+
+
+
+
+<%- include("partials/footer") -%>
